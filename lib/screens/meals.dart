@@ -11,6 +11,7 @@ class MealsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     Widget content = Center(
       child: Column(
+        mainAxisSize: MainAxisSize.min,
         children: [
           Text(
             'Uh oh... Nothing here',
