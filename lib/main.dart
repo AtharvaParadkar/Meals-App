@@ -2,7 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:meals_app/screens/categories.dart';
 
-final theme = ThemeData(
+final lightTheme = ThemeData(
+  colorScheme: ColorScheme.fromSeed(
+    brightness: Brightness.light,
+    seedColor: const Color.fromARGB(255, 200, 0, 255),
+  ),
+  textTheme: GoogleFonts.latoTextTheme(),
+);
+final darkTheme = ThemeData(
   colorScheme: ColorScheme.fromSeed(
     brightness: Brightness.dark,
     seedColor: const Color.fromARGB(255, 200, 0, 255),
@@ -21,7 +28,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: theme,
+      theme: lightTheme,
+      darkTheme: darkTheme,
+      themeMode: ThemeMode.system,
       home: const CategoriesScreen(),
     );
   }
